@@ -5,9 +5,9 @@ import './style.scss';
 console.log('starting up');
 
 let num = 0;
-function setInterval() {
+function setCounter() {
   $('#main').html(`You've been on this page for ${num} seconds.`);
   num += 1;
 }
 
-setInterval(setInterval, 1000);
+setInterval(setCounter, 1000);
