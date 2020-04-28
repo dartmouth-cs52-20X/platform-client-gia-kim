@@ -1,3 +1,29 @@
+$fontcolor:  rgb(10%, 10%, 10%);
+$backgroundcolor: rgb(98%, 98%, 98%);
+
+/* color changing background code taken from:
+https://codepen.io/P1N2O/pen/pyBNzX */
+body {
+  font-family: "Roboto", sans-serif;
+  color: $fontcolor;
+  margin: 50px;
+	background: linear-gradient(-45deg, #c46df7, #53da67, #44a9ce, #48c2b8);
+	background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .active {
-    color: pink;
-  }
+  color: pink;
+}
