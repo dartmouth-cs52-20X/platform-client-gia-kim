@@ -5,10 +5,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import React from 'react';
+import YouTube from './youtube';
 import '../style.scss';
-
-import Counter from './counter';
-import Controls from './controls';
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
@@ -16,7 +14,6 @@ const About = (props) => {
 const Welcome = (props) => {
   return (
     <div>
-      <Controls />
       Welcome
     </div>
   );
@@ -24,7 +21,6 @@ const Welcome = (props) => {
 const Test = (props) => {
   return (
     <div>
-      <Counter />
       ID: {props.match.params.id}
     </div>
   );
@@ -39,6 +35,7 @@ const App = (props) => {
       <div>
         <Nav />
         <Switch>
+          <Route exact path="/youtube" component={YouTube} />
           <Route exact path="/" component={Welcome} />
           <Route path="/about" component={About} />
           <Route exact path="/test/:id" component={Test} />
@@ -53,6 +50,7 @@ const Nav = (props) => {
   return (
     <nav>
       <ul>
+        <li><NavLink to="/youtube" exact>YouTube</NavLink></li>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/test/id1">test id1</NavLink></li>
