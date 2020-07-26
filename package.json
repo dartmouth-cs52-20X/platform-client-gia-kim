@@ -9,7 +9,7 @@
     "deploy": "yarn build; surge -p dist -d giakim-cs52-videos.surge.sh; yarn clean",
     "start": "NODE_ENV=development webpack-dev-server"
   },
-  "repository": "https://github.com/dartmouth-cs52-20S/starterpack-gia-kim.git",
+  "repository": "https://github.com/dartmouth-cs52-20X/starterpack-gia-kim.git",
   "author": "Gia Kim <gia.kim.22@dartmouth.edu>",
   "license": "MIT",
   "devDependencies": {
@@ -49,7 +49,7 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   }

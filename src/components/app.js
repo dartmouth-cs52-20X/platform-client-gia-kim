@@ -35,8 +35,8 @@ const App = (props) => {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/youtube" component={YouTube} />
           <Route exact path="/" component={Welcome} />
+          <Route exact path="/youtube" component={YouTube} />
           <Route path="/about" component={About} />
           <Route exact path="/test/:id" component={Test} />
           <Route component={FallBack} />
@@ -50,9 +50,9 @@ const Nav = (props) => {
   return (
     <nav>
       <ul>
-        <li><NavLink to="/youtube" exact>YouTube</NavLink></li>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/youtube" exact>YouTube</NavLink></li>
         <li><NavLink to="/test/id1">test id1</NavLink></li>
         <li><NavLink to="/test/id2">test id2</NavLink></li>
       </ul>
