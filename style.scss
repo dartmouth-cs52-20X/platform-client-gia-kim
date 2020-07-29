@@ -12,6 +12,38 @@ body {
   animation: gradient 5s ease infinite;
 }
 
+$fontcolor:  rgb(10%, 10%, 10%);
+$backgroundcolor: rgb(98%, 98%, 98%);
+
+#search-bar {
+  margin-bottom: 20px;
+
+  input {
+    font-size: 1.5em;
+    border-radius: .25em;
+  }
+}
+
+#video-detail {
+  width: 100%;
+}
+
+#video-section {
+  display: flex;
+
+  li {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    width: 25vw;
+    padding: 10px;
+  }
+  li:hover {
+    background: darken( $backgroundcolor, 10% );
+  }
+
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
