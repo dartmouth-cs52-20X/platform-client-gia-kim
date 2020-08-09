@@ -16,3 +16,6 @@ It also displays an error message if the all of the components are not filled.
 I worked really hard on the styling of the blog. (Each page has its own title "typewriter"-ish animation, the background is animated, etc!:) )
 
 ## Screenshots
+![](images/sc1.png)
+![](images/sc2.png)
+![](images/sc3.png)
