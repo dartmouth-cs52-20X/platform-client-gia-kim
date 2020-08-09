@@ -38,11 +38,11 @@ export function fetchPosts() { /* axios get */
   };
   }
 
-  export function updatePost(id, post) { /* axios put */
+  export function updatePost(id, post, history) { /* axios put */
     return (dispatch) => {
       axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post)
       .then((response) => {
-        dispatch({ type: ActionTypes.UPDATE_POST, payload: post });
+        dispatch({ type: ActionTypes.UPDATE_POST, payload: post }).then(history.push('/'));
       })
       .catch((error) => {
         dispatch({ type: ActionTypes.ERROR_SET, error });

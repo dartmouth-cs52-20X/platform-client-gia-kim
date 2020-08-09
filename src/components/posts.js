@@ -1,9 +1,11 @@
+/* eslint-disable react/no-danger */
 // default page listing all posts
 // use post id to link to full view
 // show coverUrl, title, tags in some form - can be a list, can be tiles, whatever you want!
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import marked from 'marked';
 import { fetchPosts } from '../actions/index';
 
 class Posts extends Component {
@@ -18,9 +20,9 @@ class Posts extends Component {
 
     displayPost = (post) => {
         return (
-            <div>
-                <Link to={`/posts/${post.id}`} key={post.id}>
-                    <div className="urlcontainter">{post.coverUrl}</div>
+            <div id="displaybox">
+                <Link to={`/posts/${post.id}`} key={post.id} id="display">
+                    <div className="urlcontainter" dangerouslySetInnerHTML={{ __html: marked(post.coverUrl || '') }} />
                     <div className="titlecontainer">{post.title}</div>
                     <div className="tagscontainer">{post.tags}</div>
                 </Link>
