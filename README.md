@@ -19,3 +19,4 @@ I worked really hard on the styling of the blog. (Each page has its own title "t
 ![](images/sc1.png)
 ![](images/sc2.png)
 ![](images/sc3.png)
+![](images/sc4.png)
