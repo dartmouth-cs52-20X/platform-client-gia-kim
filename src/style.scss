@@ -263,11 +263,26 @@ blockquote {
 
 #taginput{
   font-size: 20px;
+  color: orange;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 .tagbtn{
   font-size: 20px;
-  padding: 1%;
+  padding: 0.5%;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 20px;
+  border-color: orange;
+  color: #fff;
+  box-shadow: 0 0 40px 40px orange inset, 0 0 0 0 orange;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.tagbtn:hover {
+  box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
+  color: orange;
+
 }
 
 #icon{
