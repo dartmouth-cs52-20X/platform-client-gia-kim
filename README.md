@@ -2,7 +2,7 @@
 
 *A React+Redux Conent Platform!*
 
-[deployed url](giakim-cs52-platformclient.surge.sh)
+[deployed url](http://giakim-cs52-platformclient.surge.sh)
 
 ## What Worked Well
 I really enjoyed styling the whole blog and using material-ui! I also made sure to use my states and props in a clean way since I struggled a little bit with that for lab 3. 
