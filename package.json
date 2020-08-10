@@ -52,11 +52,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
-<<<<<<< HEAD
-    "react-router": "^5.2.0",
-=======
     "react-router": "^5.1.2",
->>>>>>> ca7223cd13307f14ee2e64c24735e5a8caddb547
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
