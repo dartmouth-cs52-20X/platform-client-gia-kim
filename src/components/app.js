@@ -4,16 +4,16 @@ import {
   Switch,
 } from 'react-router-dom';
 import React from 'react';
-import Nav from './navBar';
 import NewPost from './newpost';
 import Post from './post';
 import Posts from './posts';
+import FilterBar from './filterbar';
 
 const App = () => {
   return (
     <Router>
       <div>
-        <Nav />
+        <FilterBar />
         <Switch>
           <Route exact path="/" component={Posts} />
           <Route path="/posts/new" component={NewPost} />

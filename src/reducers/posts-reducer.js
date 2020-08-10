@@ -4,6 +4,7 @@ import { ActionTypes } from '../actions/index';
 const initialState = {
   all: [],
   current: {},
+  filter: '',
 };
 
 // For FETCH_POSTS you would return the state object with the all property set to the new posts.
@@ -12,9 +13,11 @@ const initialState = {
 const PostsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.FETCH_POSTS:
-      return { all: action.payload, current: state.current };
+      return { all: action.payload, current: state.current, filter: state.filter };
     case ActionTypes.FETCH_POST:
-        return { current: action.payload, all: state.all };
+        return { all: state.all, current: action.payload, filter: state.filter };
+    case ActionTypes.FILTER_POST:
+        return { all: state.all, current: state.current, filter: action.payload };
     default:
       return state;
   }

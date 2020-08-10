@@ -15,7 +15,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-      this.props.fetchPosts(this.props.match.params.postID);
+        this.props.fetchPosts(this.props.match.params.postID);
     }
 
     displayPost = (post) => {
@@ -30,15 +30,35 @@ class Posts extends Component {
         );
     }
 
+    displayFilteredPosts = () => {
+        if (this.props.all) {
+            return this.props.all.map((post) => {
+                console.log(this.props.filter);
+                if (this.props.filter === '') {
+                    return this.displayPost(post);
+                } else if (post.tags.toLowerCase().includes(this.props.filter.toLowerCase())) {
+                    return this.displayPost(post);
+                } else return null;
+            });
+        } else {
+            return null;
+        }
+    }
+
     render() {
         return (
-            this.props.all.map((post) => { return this.displayPost(post); })
+            <div>
+                <div className="displayposts">
+                    {this.displayFilteredPosts()}
+                </div>
+            </div>
         );
     }
 }
 
 const mapStateToProps = (reduxState) => ({
     all: reduxState.posts.all,
-  });
+    filter: reduxState.posts.filter,
+});
 
 export default connect(mapStateToProps, { fetchPosts })(Posts);

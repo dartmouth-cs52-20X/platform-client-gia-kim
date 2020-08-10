@@ -10,6 +10,7 @@ export const ActionTypes = {
   UPDATE_POST: 'UPDATE_POST',
   CREATE_POST: 'CREATE_POST',
   DELETE_POST: 'DELETE_POST',
+  FILTER_POST: 'FILTER_POST',
   };
 
 export function fetchPosts() { /* axios get */
@@ -73,4 +74,8 @@ export function fetchPosts() { /* axios get */
         dispatch({ type: ActionTypes.ERROR_SET, error });
       });
    };
+}
+
+export function filterPost(filter) {
+  return { type: ActionTypes.FILTER_POST, payload: filter };
 }
