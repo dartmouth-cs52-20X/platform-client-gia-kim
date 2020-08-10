@@ -9,7 +9,11 @@
     "deploy": "yarn build; surge -p dist -d giakim-cs52-platformclient.surge.sh; yarn clean",
     "start": "NODE_ENV=development webpack-dev-server"
   },
+<<<<<<< HEAD
   "repository": "https://github.com/dartmouth-cs52-20X/platform-client-gia-kim.git",
+=======
+  "repository": "https://github.com/dartmouth-cs52-20X/sa-reactintro-gia-kim.git",
+>>>>>>> ca7223cd13307f14ee2e64c24735e5a8caddb547
   "author": "Gia Kim <gia.kim.22@dartmouth.edu>",
   "license": "MIT",
   "devDependencies": {
@@ -52,7 +56,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
+<<<<<<< HEAD
     "react-router": "^5.2.0",
+=======
+    "react-router": "^5.1.2",
+>>>>>>> ca7223cd13307f14ee2e64c24735e5a8caddb547
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
