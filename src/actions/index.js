@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const ROOT_URL = 'https://giakimlab5.herokuapp.com/api';
+const ROOT_URL = 'https://giakimlab5.herokuapp.com';
 // const ROOT_URL = 'http://localhost:9090/api';
 // const ROOT_URL = 'https://platform.cs52.me/api';
-const API_KEY = '?key=g_kim';
+// const API_KEY = '';
 
 // keys for actiontypes
 export const ActionTypes = {
@@ -17,7 +17,7 @@ export const ActionTypes = {
 
 export function fetchPosts() { /* axios get */
     return (dispatch) => {
-      axios.get(`${ROOT_URL}/posts${API_KEY}`)
+      axios.get(`${ROOT_URL}/posts`)
         .then((response) => {
           dispatch({ type: ActionTypes.FETCH_POSTS, payload: response.data });
         })
@@ -30,7 +30,7 @@ export function fetchPosts() { /* axios get */
 // With POST and PUT you need to supply an object with key,value data.
   export function createPost(post, history) { /* axios post */
     return (dispatch) => {
-      axios.post(`${ROOT_URL}/posts${API_KEY}`, post)
+      axios.post(`${ROOT_URL}/posts`, post)
       .then((response) => {
         console.log(response.data);
         dispatch({ type: ActionTypes.CREATE_POST, payload: post }).then(history.push('/'));
@@ -43,7 +43,7 @@ export function fetchPosts() { /* axios get */
 
   export function updatePost(id, post, history) { /* axios put */
     return (dispatch) => {
-      axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post)
+      axios.put(`${ROOT_URL}/posts/${id}`, post)
       .then((response) => {
         dispatch({ type: ActionTypes.UPDATE_POST, payload: post }).then(history.push('/'));
       })
@@ -55,7 +55,7 @@ export function fetchPosts() { /* axios get */
 
   export function fetchPost(id) { /* axios get */
     return (dispatch) => {
-      axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`)
+      axios.get(`${ROOT_URL}/posts/${id}`)
       .then((response) => {
         console.log(response.data);
         dispatch({ type: ActionTypes.FETCH_POST, payload: response.data });
@@ -68,7 +68,7 @@ export function fetchPosts() { /* axios get */
 
   export function deletePost(id, history) { /* axios delete */
     return (dispatch) => {
-      axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+      axios.delete(`${ROOT_URL}/posts/${id}`)
       .then((response) => {
         dispatch({ type: ActionTypes.UPDATE_POST, payload: response.data }).then(history.push('/'));
       })
