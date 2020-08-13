@@ -31,7 +31,7 @@ class Posts extends Component {
     }
 
     displayFilteredPosts = () => {
-        if (this.props.all) {
+        if (this.props.all.length > 0) {
             return this.props.all.map((post) => {
                 console.log(this.props.filter);
                 if (this.props.filter === '') {
