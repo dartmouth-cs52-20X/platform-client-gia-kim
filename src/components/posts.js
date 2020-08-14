@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-danger */
 // default page listing all posts
 // use post id to link to full view
@@ -36,7 +37,7 @@ class Posts extends Component {
                 console.log(this.props.filter);
                 if (this.props.filter === '') {
                     return this.displayPost(post);
-                } else if (post.tags.toLowerCase().includes(this.props.filter.toLowerCase())) {
+                } else if (post.tags.toLowerCase().includes(this.props.filter.toLowerCase()) || post.title.toLowerCase().includes(this.props.filter.toLowerCase()) || post.content.toLowerCase().includes(this.props.filter.toLowerCase())) {
                     return this.displayPost(post);
                 } else return null;
             });

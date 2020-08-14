@@ -26,7 +26,7 @@ class FilterBar extends Component {
     return (
       <div>
           <div id="filter">
-            <input id="taginput" onChange={this.onInputChange} value={this.state.filter} placeholder="type in a tag!" />
+            <input id="taginput" onChange={this.onInputChange} value={this.state.filter} placeholder="search for a post!" />
             <button className="tagbtn" type="button" onClick={this.handleBtnClick}>SEARCH</button>
           </div>
         <div>
