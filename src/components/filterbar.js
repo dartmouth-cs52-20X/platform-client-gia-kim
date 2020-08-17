@@ -38,12 +38,24 @@ class FilterBar extends Component {
                 <LibraryBooksIcon />
               </Fab>
             </NavLink>
-            <NavLink exact to="/signin">
-              Sign In
-            </NavLink>
-            <NavLink exact to="/signup">
-              Sign Up
-            </NavLink>
+            <button type="button"
+              className="signinbutton"
+              id="fill"
+              onClick={this.signin}
+            ><NavLink exact to="/signin">
+                    Sign In
+             </NavLink>
+            </button>
+            <button type="button"
+              id="fill"
+              className="signupbutton"
+              onClick={this.signout}
+            >
+              <NavLink exact to="/signup">
+                Sign Up
+              </NavLink>
+            </button>
+
           </ul>
         </div>
         </nav>
@@ -64,7 +76,7 @@ class FilterBar extends Component {
                 <AddIcon />
               </Fab>
             </NavLink>
-            <li onClick={() => this.signout()}>
+            <li onClick={() => this.signout()} className="signout">
               <NavLink exact to="/">
                 <Fab color="default" id="logout" aria-label="add">
                   <ExitToAppIcon />

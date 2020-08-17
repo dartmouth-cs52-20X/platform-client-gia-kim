@@ -30,7 +30,7 @@ class SignIn extends Component {
 
     render() {
         return (
-            <div>
+            <div className="signinbox">
                 <div id="emailsignin">
                     <h4>Enter Email</h4>
                     <input id="email" onChange={this.onEmailChange} value={this.state.email} placeholder="your email" />

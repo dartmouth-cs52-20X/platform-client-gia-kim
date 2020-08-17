@@ -123,7 +123,7 @@ class Post extends Component {
 
             <div className="postbox">
               <div className="titlecontainer">{this.props.currentPost.title}</div>
-              <div className="authorcontainer"><p>author:</p>{this.props.currentPost.author}</div>
+              <div className="authorcontainer">author: {this.props.currentPost.author}</div>
               <div className="contentcontainer" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />
               <div className="urlcontainer" dangerouslySetInnerHTML={{ __html: marked(`![](${this.props.currentPost.coverUrl})` || '') }} />
               <div className="tagscontainer">{this.props.currentPost.tags}</div>
@@ -136,9 +136,6 @@ class Post extends Component {
   render() {
     return (
       <div>
-          <div className="editthis">
-            <h1 />
-          </div>
 
         <div id="icon">
                   <Button
