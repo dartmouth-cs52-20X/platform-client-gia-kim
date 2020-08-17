@@ -23,7 +23,7 @@ class Posts extends Component {
         return (
             <div id="displaybox">
                 <Link to={`/posts/${post.id}`} key={post.id} id="display">
-                    <div className="urlcontainter" dangerouslySetInnerHTML={{ __html: marked(post.coverUrl || '') }} />
+                    <div className="urlcontainter" dangerouslySetInnerHTML={{ __html: marked(`![](${post.coverUrl})` || '') }} />
                     <div className="titlecontainer">{post.title}</div>
                     <div className="tagscontainer">{post.tags}</div>
                 </Link>
