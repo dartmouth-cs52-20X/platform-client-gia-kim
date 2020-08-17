@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
-import { filterPost } from '../actions/index';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { filterPost, signoutUser } from '../actions/index';
 
 class FilterBar extends Component {
   constructor(props) {
@@ -22,6 +23,61 @@ class FilterBar extends Component {
     this.props.filterPost(this.state.filter);
   }
 
+  signout = () => {
+    this.props.signoutUser(this.props.history);
+  }
+
+  renderthis() {
+    if (!this.props.authenticated) {
+      return (
+        <nav>
+        <div id="navstuff">
+          <ul>
+            <NavLink exact to="/">
+              <Fab id="all" color="primary" aria-label="add">
+                <LibraryBooksIcon />
+              </Fab>
+            </NavLink>
+            <NavLink exact to="/signin">
+              Sign In
+            </NavLink>
+            <NavLink exact to="/signup">
+              Sign Up
+            </NavLink>
+          </ul>
+        </div>
+        </nav>
+      );
+    } else {
+      return (
+        <nav>
+        <div id="navstuff">
+          <ul>
+            <NavLink exact to="/">
+              <Fab id="all" color="primary" aria-label="add">
+                <LibraryBooksIcon />
+              </Fab>
+            </NavLink>
+
+            <NavLink to="/posts/new">
+              <Fab color="secondary" id="newbut" aria-label="add">
+                <AddIcon />
+              </Fab>
+            </NavLink>
+            <li onClick={() => this.signout()}>
+              <NavLink exact to="/">
+                <Fab color="default" id="logout" aria-label="add">
+                  <ExitToAppIcon />
+                </Fab>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        </nav>
+      );
+    }
+  }
+
   render() {
     return (
       <div>
@@ -30,23 +86,7 @@ class FilterBar extends Component {
             <button className="tagbtn" type="button" onClick={this.handleBtnClick}>SEARCH</button>
           </div>
         <div>
-          <nav>
-            <div id="navstuff">
-              <ul>
-                <NavLink exact to="/"><Fab id="all" color="primary" aria-label="add">
-                  <LibraryBooksIcon />
-                                      </Fab>
-                </NavLink>
-
-                <NavLink to="/posts/new">
-                  <Fab color="secondary" id="newbut" aria-label="add">
-                    <AddIcon />
-                  </Fab>
-                </NavLink>
-
-              </ul>
-            </div>
-          </nav>
+         {this.renderthis()}
           <div className="typewriter">
             <h1><blockquote>The coolest blog ever.</blockquote></h1>
           </div>
@@ -60,4 +100,10 @@ class FilterBar extends Component {
   }
 }
 
-export default connect(null, { filterPost })(FilterBar);
+function mapStateToProps(reduxState) {
+  return {
+    authenticated: reduxState.auth.authenticated,
+  };
+}
+
+export default connect(mapStateToProps, { filterPost, signoutUser })(FilterBar);

@@ -68,20 +68,21 @@ class Post extends Component {
   }
 
   renderPosts() {
+    console.log(this.props.currentPost);
     if (this.state.isEditing) {
         return (
           <div>
             <div id="icon">
-                       <Button
-                         id="icons"
-                         variant="contained"
-                         color="primary"
-                         id="icon"
-                         startIcon={<SaveAltIcon />}
-                         onClick={this.stopEditing}
-                       >
-              Save
-                       </Button>
+              <Button
+                id="icons"
+                variant="contained"
+                color="primary"
+                id="icon"
+                startIcon={<SaveAltIcon />}
+                onClick={this.stopEditing}
+              >
+                Save
+              </Button>
             </div>
 
             <div className="postbox">
@@ -122,6 +123,7 @@ class Post extends Component {
 
             <div className="postbox">
               <div className="titlecontainer">{this.props.currentPost.title}</div>
+              <div className="authorcontainer">{this.props.currentPost.author}</div>
               <div className="contentcontainer" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />
               <div className="urlcontainer" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.coverUrl || '') }} />
               <div className="tagscontainer">{this.props.currentPost.tags}</div>
